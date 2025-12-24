@@ -77,10 +77,11 @@ Proses klasifikasi manual memerlukan waktu dan berpotensi menimbulkan kesalahan,
 <img width="536" height="470" alt="image" src="https://github.com/user-attachments/assets/7c6d968d-4fb7-4481-a360-ef892e57858f" />
 
 #### 🔹 BERT
-![BERT Accuracy Loss](assets/bert_accuracy_loss.png)
+<img width="536" height="470" alt="image" src="https://github.com/user-attachments/assets/477e4ad0-aea7-4292-ac4f-ef1bf71de6a9" />
 
 #### 🔹 DistilBERT
-![DistilBERT Accuracy Loss](assets/distilbert_accuracy_loss.png)
+<img width="545" height="470" alt="image" src="https://github.com/user-attachments/assets/07dbe728-83a5-4326-a700-b8668dfdc882" />
+
 
 Model pretrained menunjukkan konvergensi yang lebih stabil dibandingkan model non-pretrained.
 
@@ -89,13 +90,13 @@ Model pretrained menunjukkan konvergensi yang lebih stabil dibandingkan model no
 ### 📊 Confusion Matrix
 
 #### 🔹 LSTM
-![Confusion Matrix LSTM](assets/cm_lstm.png)
+<img width="522" height="470" alt="image" src="https://github.com/user-attachments/assets/dfcb4e82-39df-4134-ab8a-6190766aab52" />
 
 #### 🔹 BERT
-![Confusion Matrix BERT](assets/cm_bert.png)
+<img width="522" height="470" alt="image" src="https://github.com/user-attachments/assets/079dee62-d798-4e37-a2bf-18a71e7cce03" />
 
 #### 🔹 DistilBERT
-![Confusion Matrix DistilBERT](assets/cm_distilbert.png)
+<img width="552" height="455" alt="image" src="https://github.com/user-attachments/assets/de08a4c9-019f-410f-b88f-e01c2a719d08" />
 
 ---
 
