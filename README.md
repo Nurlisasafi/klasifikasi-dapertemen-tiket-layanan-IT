@@ -1,0 +1,149 @@
+# 🎫 IT Ticket Classification Dashboard
+
+Dashboard ini digunakan untuk mengklasifikasikan tiket layanan IT ke departemen yang tepat menggunakan berbagai model Machine Learning dan Deep Learning.  
+Proyek ini dikembangkan untuk memenuhi **Ujian Akhir Praktikum (UAP) Pembelajaran Mesin** dan diimplementasikan dalam bentuk **website sederhana berbasis Streamlit**.
+
+---
+
+## 📌 Daftar Isi
+1. Deskripsi Proyek  
+2. Dataset  
+3. Preprocessing dan Pemodelan  
+4. Hasil dan Analisis  
+5. Perbandingan Model  
+6. Sistem Website (Streamlit)  
+7. Link Model  
+8. Langkah Instalasi  
+
+---
+
+## 1️⃣ Deskripsi Proyek
+
+### 🔍 Latar Belakang
+Dalam sistem layanan IT, tiket yang masuk harus segera diteruskan ke departemen yang tepat agar proses penanganan berjalan cepat dan efisien.  
+Proses klasifikasi manual memerlukan waktu dan berpotensi menimbulkan kesalahan, sehingga diperlukan sistem klasifikasi otomatis berbasis Natural Language Processing (NLP).
+
+### 🎯 Tujuan Pengembangan
+- Mengklasifikasikan tiket IT secara otomatis
+- Membandingkan performa model non-pretrained dan pretrained
+- Mengimplementasikan model ke dalam dashboard Streamlit
+
+---
+
+## 2️⃣ Dataset
+- Jenis data: **Teks**
+- Fitur utama:
+  - `Body`
+  - `Department`
+- Jumlah data: ≥ 29,651 tiket
+- Sumber dataset: *Kaggel*
+- https://www.kaggle.com/datasets/parthpatil256/it-support-ticket-data
+
+---
+
+## 3️⃣ Preprocessing dan Pemodelan
+
+### 🧹 Preprocessing Data
+- Case folding
+- Cleaning teks (hapus simbol, angka, URL)
+- Tokenization
+- Padding & truncation
+- Label encoding
+
+### 🤖 Model yang Digunakan
+
+#### 1. LSTM (Non-Pretrained)
+- Model neural network berbasis sequence
+- Cepat dan ringan
+- Digunakan sebagai baseline model
+
+#### 2. BERT (Pretrained)
+- Model NLP berbasis Transformer
+- Memiliki contextual embedding
+- Memberikan performa akurasi tertinggi
+
+#### 3. DistilBERT (Pretrained)
+- Versi ringan dari BERT
+- Lebih cepat dengan akurasi kompetitif
+- Efisien untuk implementasi sistem
+
+---
+
+## 4️⃣ Hasil dan Analisis
+
+### 📈 Grafik Loss dan Accuracy
+
+#### 🔹 LSTM
+![LSTM Accuracy Loss](assets/lstm_accuracy_loss.png)
+
+#### 🔹 BERT
+![BERT Accuracy Loss](assets/bert_accuracy_loss.png)
+
+#### 🔹 DistilBERT
+![DistilBERT Accuracy Loss](assets/distilbert_accuracy_loss.png)
+
+Model pretrained menunjukkan konvergensi yang lebih stabil dibandingkan model non-pretrained.
+
+---
+
+### 📊 Confusion Matrix
+
+#### 🔹 LSTM
+![Confusion Matrix LSTM](assets/cm_lstm.png)
+
+#### 🔹 BERT
+![Confusion Matrix BERT](assets/cm_bert.png)
+
+#### 🔹 DistilBERT
+![Confusion Matrix DistilBERT](assets/cm_distilbert.png)
+
+---
+
+## 5️⃣ Perbandingan Model
+
+| Model        | Accuracy | Precision | Recall | F1-Score | Analisis |
+|-------------|----------|-----------|--------|----------|----------|
+| LSTM        | 0.64     | 0.65      | 0.64   | 0.64     | Cepat namun akurasi terbatas |
+| BERT        | 0.82     | 0.83      | 0.82   | 0.83     | Akurasi tertinggi |
+| DistilBERT | 0.67     | 0.68      | 0.67   | 0.66     | Seimbang antara akurasi & kecepatan |
+
+Model terbaik berdasarkan akurasi adalah **BERT**, sedangkan **DistilBERT** menawarkan efisiensi yang lebih baik.
+
+---
+
+## 6️⃣ Sistem Website Sederhana (Streamlit)
+
+### 🏠 Fitur Utama
+- Dashboard statistik dataset
+- Exploratory Data Analysis (EDA)
+- Prediksi tiket secara real-time
+- Perbandingan performa model
+
+### 🏢 Kategori Departemen
+- Technical Support
+- Billing and Payments
+- Returns and Exchanges
+- Sales and Pre-Sales
+
+### 📊 Prioritas Tiket
+- 🔴 High
+- 🟡 Medium
+- 🟢 Low
+
+---
+
+## 7️⃣ 🔗 Link Model
+
+Karena ukuran model besar, file model tidak disertakan langsung di repository GitHub.
+
+- **Model**  
+  https://drive.google.com/drive/folders/1MKNeis1YvIJmoKuq9hvILP_Ng505MjoK?usp=drive_link
+---
+
+## 8️⃣ ⚙️ Langkah Instalasi
+
+```bash
+git clone <repository-url>
+cd T-Ticket-Classification-Dashboard
+pip install -r requirements.txt
+streamlit run app.py
