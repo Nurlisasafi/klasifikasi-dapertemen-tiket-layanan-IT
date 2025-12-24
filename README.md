@@ -35,9 +35,24 @@ Proses klasifikasi manual memerlukan waktu dan berpotensi menimbulkan kesalahan,
 - Fitur utama:
   - `Body`
   - `Department`
-- Jumlah data: ≥ 29,651 tiket
-- Sumber dataset: *Kaggel*
-- https://www.kaggle.com/datasets/parthpatil256/it-support-ticket-data
+- Jumlah data: **29.651 tiket**
+- Sumber dataset: **Kaggle**  
+  https://www.kaggle.com/datasets/parthpatil256/it-support-ticket-data
+
+Dataset yang digunakan merupakan dataset tiket layanan IT yang terdiri dari dua komponen utama, yaitu **Body** dan **Department**.  
+Kolom **Body** berisi teks deskriptif berupa keluhan, permintaan, atau permasalahan yang diajukan oleh pengguna, sedangkan kolom **Department** berisi label tujuan departemen yang menangani tiket tersebut.  
+Dataset ini digunakan untuk melatih model dalam memahami konteks bahasa pada isi tiket serta memetakan setiap tiket ke departemen yang sesuai secara otomatis.
+
+### 📊 Statistik Singkat Dataset (EDA)
+Berdasarkan hasil Exploratory Data Analysis (EDA), diperoleh informasi sebagai berikut:
+- Total data tiket: **29.651 tiket**
+- Jumlah kelas departemen: **10 departemen**
+- Rata-rata panjang teks tiket: **±120 kata**
+- Panjang teks terpendek: **±5 kata**
+- Panjang teks terpanjang: **>500 kata**
+- Distribusi kelas tidak seimbang, di mana beberapa departemen memiliki jumlah tiket yang lebih dominan
+
+Analisis EDA ini digunakan sebagai dasar dalam pemilihan model, preprocessing teks, dan evaluasi performa model.
 
 ---
 
@@ -45,15 +60,15 @@ Proses klasifikasi manual memerlukan waktu dan berpotensi menimbulkan kesalahan,
 
 ### 🧹 Preprocessing Data
 - Case folding
-- Cleaning teks (hapus simbol, angka, URL)
+- Cleaning teks (menghapus simbol, angka, dan URL)
 - Tokenization
-- Padding & truncation
+- Padding dan truncation
 - Label encoding
 
 ### 🤖 Model yang Digunakan
 
 #### 1. LSTM (Non-Pretrained)
-- Model neural network berbasis sequence
+- Neural network berbasis sequence
 - Cepat dan ringan
 - Digunakan sebagai baseline model
 
@@ -74,14 +89,13 @@ Proses klasifikasi manual memerlukan waktu dan berpotensi menimbulkan kesalahan,
 ### 📈 Grafik Loss dan Accuracy
 
 #### 🔹 LSTM
-<img width="536" height="470" alt="image" src="https://github.com/user-attachments/assets/7c6d968d-4fb7-4481-a360-ef892e57858f" />
+<img width="536" height="470" src="https://github.com/user-attachments/assets/7c6d968d-4fb7-4481-a360-ef892e57858f" />
 
 #### 🔹 BERT
-<img width="536" height="470" alt="image" src="https://github.com/user-attachments/assets/477e4ad0-aea7-4292-ac4f-ef1bf71de6a9" />
+<img width="536" height="470" src="https://github.com/user-attachments/assets/477e4ad0-aea7-4292-ac4f-ef1bf71de6a9" />
 
 #### 🔹 DistilBERT
-<img width="545" height="470" alt="image" src="https://github.com/user-attachments/assets/07dbe728-83a5-4326-a700-b8668dfdc882" />
-
+<img width="545" height="470" src="https://github.com/user-attachments/assets/07dbe728-83a5-4326-a700-b8668dfdc882" />
 
 Model pretrained menunjukkan konvergensi yang lebih stabil dibandingkan model non-pretrained.
 
@@ -90,13 +104,13 @@ Model pretrained menunjukkan konvergensi yang lebih stabil dibandingkan model no
 ### 📊 Confusion Matrix
 
 #### 🔹 LSTM
-<img width="522" height="470" alt="image" src="https://github.com/user-attachments/assets/dfcb4e82-39df-4134-ab8a-6190766aab52" />
+<img width="522" height="470" src="https://github.com/user-attachments/assets/dfcb4e82-39df-4134-ab8a-6190766aab52" />
 
 #### 🔹 BERT
-<img width="522" height="470" alt="image" src="https://github.com/user-attachments/assets/079dee62-d798-4e37-a2bf-18a71e7cce03" />
+<img width="522" height="470" src="https://github.com/user-attachments/assets/079dee62-d798-4e37-a2bf-18a71e7cce03" />
 
 #### 🔹 DistilBERT
-<img width="552" height="455" alt="image" src="https://github.com/user-attachments/assets/de08a4c9-019f-410f-b88f-e01c2a719d08" />
+<img width="552" height="455" src="https://github.com/user-attachments/assets/de08a4c9-019f-410f-b88f-e01c2a719d08" />
 
 ---
 
@@ -106,9 +120,9 @@ Model pretrained menunjukkan konvergensi yang lebih stabil dibandingkan model no
 |-------------|----------|-----------|--------|----------|----------|
 | LSTM        | 0.64     | 0.65      | 0.64   | 0.64     | Cepat namun akurasi terbatas |
 | BERT        | 0.82     | 0.83      | 0.82   | 0.83     | Akurasi tertinggi |
-| DistilBERT | 0.67     | 0.68      | 0.67   | 0.66     | Seimbang antara akurasi & kecepatan |
+| DistilBERT | 0.67     | 0.68      | 0.67   | 0.66     | Seimbang antara akurasi dan kecepatan |
 
-Model terbaik berdasarkan akurasi adalah **BERT**, sedangkan **DistilBERT** menawarkan efisiensi yang lebih baik.
+Model terbaik berdasarkan akurasi adalah **BERT**, sedangkan **DistilBERT** menawarkan efisiensi komputasi yang lebih baik.
 
 ---
 
@@ -120,25 +134,30 @@ Model terbaik berdasarkan akurasi adalah **BERT**, sedangkan **DistilBERT** mena
 - Prediksi tiket secara real-time
 - Perbandingan performa model
 
-### 🏢 Kategori Departemen
-- Technical Support
-- Billing and Payments
-- Returns and Exchanges
-- Sales and Pre-Sales
+### 📊 Penjelasan Dashboard
+Halaman Dashboard menampilkan ringkasan statistik dataset dan informasi model, meliputi:
+- **Total Tiket**: jumlah keseluruhan data tiket
+- **Jumlah Departemen**: total kategori departemen
+- **Prioritas High**: jumlah tiket prioritas tinggi
+- **Model Aktif**: model yang sedang digunakan
 
-### 📊 Prioritas Tiket
-- 🔴 High
-- 🟡 Medium
-- 🟢 Low
+Dashboard juga menampilkan visualisasi **distribusi departemen** dan **distribusi prioritas** untuk membantu pengguna memahami karakteristik data.
+
+### 🔮 Penjelasan Hasil Prediksi
+Pada halaman Prediksi, pengguna dapat memasukkan teks tiket secara manual.  
+Sistem akan menampilkan:
+- **Departemen hasil prediksi**
+- **Distribusi probabilitas** setiap kelas dalam bentuk grafik batang
+
+Grafik probabilitas menunjukkan tingkat kepercayaan model terhadap hasil prediksi yang diberikan.
 
 ---
 
 ## 7️⃣ 🔗 Link Model
+Karena ukuran model cukup besar, file model tidak disertakan langsung di repository GitHub.
 
-Karena ukuran model besar, file model tidak disertakan langsung di repository GitHub.
+https://drive.google.com/drive/folders/1MKNeis1YvIJmoKuq9hvILP_Ng505MjoK?usp=drive_link
 
-- **Model**  
-  https://drive.google.com/drive/folders/1MKNeis1YvIJmoKuq9hvILP_Ng505MjoK?usp=drive_link
 ---
 
 ## 8️⃣ ⚙️ Langkah Instalasi
