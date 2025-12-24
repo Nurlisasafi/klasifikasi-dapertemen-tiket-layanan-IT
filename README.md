@@ -74,7 +74,7 @@ Proses klasifikasi manual memerlukan waktu dan berpotensi menimbulkan kesalahan,
 ### 📈 Grafik Loss dan Accuracy
 
 #### 🔹 LSTM
-![LSTM Accuracy Loss](assets/lstm_accuracy_loss.png)
+<img width="536" height="470" alt="image" src="https://github.com/user-attachments/assets/7c6d968d-4fb7-4481-a360-ef892e57858f" />
 
 #### 🔹 BERT
 ![BERT Accuracy Loss](assets/bert_accuracy_loss.png)
