@@ -128,6 +128,9 @@ Model terbaik berdasarkan akurasi adalah **BERT**, sedangkan **DistilBERT** mena
 
 ## 6️⃣ Sistem Website Sederhana (Streamlit)
 
+<img width="1327" height="629" alt="image" src="https://github.com/user-attachments/assets/391a25e9-694f-4fb7-8057-07d5ead1a6dd" />
+
+
 ### 🏠 Fitur Utama
 - Dashboard statistik dataset
 - Exploratory Data Analysis (EDA)
